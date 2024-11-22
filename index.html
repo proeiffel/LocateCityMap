@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Maps Arama</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIZaSyAwOuMnk7uEl23lg_oBYi_Rw7KcK9NNK2Y&callback=initMap"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,13 +41,16 @@
 
     <script>
         let map;
+
+        // Haritayı başlat
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 39.92077, lng: 32.85411 }, // Varsayılan olarak Ankara
+                center: { lat: 39.92077, lng: 32.85411 }, // Varsayılan: Ankara
                 zoom: 6,
             });
         }
 
+        // Şehir haritasını göster
         function showCityOnMap() {
             const city = document.getElementById('city-input').value;
             if (!city) {
@@ -74,8 +76,12 @@
                 }
             });
         }
+    </script>
 
-        window.onload = initMap;
+    <script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIZaSyAwOuMnk7uEl23lg_oBYi_Rw7KcK9NNK2Y&callback=initMap">
     </script>
 </body>
 </html>
